@@ -26,5 +26,14 @@ namespace FE.Models
                 return this.nombre + " " +this.apellido;
             }
         }
+
+        [DisplayName("CUIT")]
+        public string cuitString
+        {
+            get
+            {
+                return this.cuit.ToString().Substring(0,2) + "-" + this.cuit.ToString().Substring(2, 8) + "-" + this.cuit.ToString().Substring(10, 1);
+            }
+        }
     }
 }
