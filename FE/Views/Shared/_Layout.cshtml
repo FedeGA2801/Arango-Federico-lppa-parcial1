@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<body>
+    <div id="cabecera">
+        <div id="logo">
+            <h1></h1>
+        </div>
+    </div>
+    <div id="menu">
+        <ul id="menu_principal">
+            <li> <a href="/">Home</a> </li>
+            <li>
+            <li>@Html.ActionLink("Afiliados", "Index", "Afiliados", new { area = "" }, null)</li>
+            <li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Log-Out", "Auth")">Log Out</a>
+                }
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="contenido">
+        <div id="divisor"></div>
+        <div id="principal">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
