@@ -28,6 +28,12 @@ namespace FE.Business
             db.Create(afiliado);
         }
 
+        public void Updatear(Afiliados afiliado)
+        {
+            var db = new BaseDataServices<Afiliados>();
+            db.Update(afiliado);
+        }
+
         public void Eliminar(Afiliados afiliado)
         {
             var db = new BaseDataServices<Afiliados>();

@@ -61,12 +61,13 @@ namespace FE.Controllers
 
         // POST: Afiliados/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Afiliados afiliado)
         {
             try
             {
                 // TODO: Add update logic here
-
+                var bll = new AfiliadosBiz();
+                bll.Updatear(afiliado);
                 return RedirectToAction("Index");
             }
             catch

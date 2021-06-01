@@ -23,7 +23,7 @@ namespace FE.Models
         {
             get
             {
-                return this.nombre + this.apellido;
+                return this.nombre + " " +this.apellido;
             }
         }
     }
